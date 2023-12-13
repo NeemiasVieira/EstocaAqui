@@ -67,7 +67,7 @@ const Cadastro = () => {
     <>
       <CadastroMain>
         <Navigation />
-        <h1>Sistema de Monitoramento de Solo</h1>
+        <h1>EstocaAqui - Cadastro</h1>
         <h2>Cadastro</h2>
 
         <form type="submit" onSubmit={(e) => Cadastrar(e)}>

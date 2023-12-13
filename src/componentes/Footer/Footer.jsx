@@ -15,30 +15,30 @@ export const Footer = () => {
       <div>
         <div className="footer-content">
           <div className="Intro">
-            <h3>Trabalho de Conclusão de Curso</h3>
-            <p>Nós somos um grupo de 4 integrantes buscando melhorar a qualidade de crescimento e vida da sua plantinha.</p>
-            <img src="https://www.unisanta.br/images/logos/logo-vertical-branco-outubro.png?v=QhvaqXKBZ7CuFjpv6TEn7AHb_W6edJeMo3Vfgs4WdyA" alt="Logo Unisanta"></img>
+            <h3>Projeto realizado pelos estagiários</h3>
+            <p>Em busca de um controle de estoque imbatível</p>
+            <img src="https://modalgr.com.br/wp-content/themes/modal/images/_logo.png" alt="Logo ModalGR"></img>
           </div>
           <div className="footer-section">
             <h3>Integrantes do Grupo</h3>
             <p>
-              Neemias Vieira <br/> Luan Carusi <br/> Caio Monteiro <br/> Luis Guilherme
+              Diogo Asenjo <br/> Neemias Vieira <br/> Gabriel Leandro
             </p>
           </div>
           <div className="footer-section">
             <h3>Informações de Contato</h3>
-            <p>e-mail: nf170550@alunos.unisanta.br</p>
+            <p>e-mail: neemias.fernandes@modalgr.com.br</p>
             <p>Telefone: +55 (13) 99602-0483</p>
-            <p>Rua Oswaldo Cruz 271, Boqueirão - Santos/SP</p>
+            <p>Rua Visconde de Rio Branco 2, Centro - Santos/SP</p>
           </div>
           <div className="footer-section footerServices">
             <h3>Serviços</h3>
             <ul>
               <li>
-                <a href="./">Monitoramento de Plantas</a>
+                <a href="./">Controle de estoque</a>
               </li>
               <li>
-                <a href="https://sms-api-oe8t.onrender.com/api/">Documentação da API</a>
+                <a href="https://estoca-aqui-api-git-main-neemiasvieira.vercel.app/">Documentação da API</a>
               </li>
               <li>
                 <Link to="/faq">FAQ</Link>
@@ -81,7 +81,7 @@ export const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p className="copyrights">
-          &copy; 2024 Sistema de Monitoramento do Solo - Todos os direitos reservados.
+          &copy; 2024 EstocaAqui - Todos os direitos reservados.
         </p>
       </div>
     </FooterStyle>
