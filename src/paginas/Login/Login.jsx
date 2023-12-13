@@ -5,44 +5,44 @@ import { Navegacao } from "../../componentes/Navegacao/Navegacao";
 import { Footer } from "../../componentes/Footer/Footer";
 import { Loading } from "../../componentes/Loading/Loading";
 import { MensagemDeErro } from "../../componentes/MensagemDeErro/MensagemDeErro";
-// import { UserService } from "../../services/API/UserSerivice";
+import { UsuarioService } from "../../serviços/API/modulos/UsuarioSerivce";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [response, setResponse] = useState();
-  const [error, setError] = useState();
+  const [senha, setSenha] = useState("");
+  const [resposta, setResposta] = useState();
+  const [erro, setErro] = useState();
   const [isLoading, setIsLoading] = useState(false);
-//   const userService = new UserService(setResponse, setError);
+  const usuarioSerivce = new UsuarioService(setResposta, setErro);
   const navigate = useNavigate();
 
-//   const Login = async (e) => {
-//     e.preventDefault();
-//     setIsLoading(true);
-//     await userService.login(email, password);
-//     setIsLoading(false);
-//   };
+  const Login = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    await usuarioSerivce.login(email, senha);
+    setIsLoading(false);
+  };
 
-  useEffect(() => {}, [response, error]);
+  useEffect(() => {console.log(resposta)}, [resposta, erro]);
 
-  if (error)
+  if (erro)
     return (
       <MensagemDeErro
-        error={error.response?.data.mensagem}
+        error={erro.response?.data.mensagem}
         mensagemBotao="Voltar"
-        setError={setError}
+        setError={setErro}
       />
     );
 
   if (isLoading) return <Loading/>
 
-  if (response?.status === 200) {
-    localStorage.setItem("token", response.data.token);
-    localStorage.setItem("nome", response.data.usuario.nome);
-    localStorage.setItem("userID", response.data.usuario.id);
+  if (resposta?.status === 200) {
+    localStorage.setItem("token", resposta.data.token);
+    localStorage.setItem("nome", resposta.data.usuario.nome);
+    localStorage.setItem("userID", resposta.data.usuario.id);
     navigate("/sistema/home");
   }
 
@@ -77,13 +77,13 @@ const Login = () => {
             <input
               type="password"
               placeholder="Digite a sua senha"
-              value={password}
+              value={senha}
               onChange={(e) => {
-                setPassword(e.target.value);
+                setSenha(e.target.value);
               }}
             />
           </div>
-          <button>Login</button>
+          <button onClick={Login}>Login</button>
           <div className="sugestaoCadastro">
             <p>Não tem cadastro?</p>
             <Link to="/cadastro" className="crieSuaConta">
