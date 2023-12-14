@@ -1,34 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Image, Transformation } from "cloudinary-react";
 import { useCadastroContext } from "../../contextos/CadastroContext";
+import { UploaderService } from "../../serviços/API/modulos/UploaderService";
+import { CadastroEmpresaAdicionais } from "./CadastroStyles";
 
 const Cadastro2 = () => {
-  const { usuario } = useCadastroContext();
-  const [image, setImage] = useState("");
+  const { usuario, setLogo, setBanner, grupo } = useCadastroContext();
 
-  const handleUpload = async (e) => {
-    const file = e.target.files[0];
+  const [resposta, setResposta] = useState(null);
+  const [erro, setErro] = useState(null);
+  const [image, setImamge] = useState();
+
+  const servicoUploader = new UploaderService(setResposta, setErro);
+
+  const lidarComMudancaArquivo = async (evento) => {
+    console.log('Mudança de arquivo detectada');
+    await servicoUploader.enviarImagem(evento.target.files[0]);
   };
 
+  useEffect(
+    () => {
+      if (erro) console.log(erro);
+      if (resposta) {
+        setImamge(String(resposta));
+        setLogo(resposta);
+        console.log(grupo)        
+      }
+    },
+    resposta,
+    erro,
+  );
+
   return (
-    <>
-      <p>Cadastro filho 2</p>
-      <h1>{usuario.nome}</h1>
-      <Link to="/cadastro/1">Voltar</Link>
-      <button onClick={() => console.log(usuario)}>Mostrar</button>
-      <div>
-        <input type="file" onChange={handleUpload} />
-        {image && (
-          <div>
-            <Image cloudName="seu_username" publicId={image} width="300" crop="scale">
-              <Transformation quality="auto" fetchFormat="auto" />
-            </Image>
-            <p>Link da imagem: {image}</p>
-          </div>
-        )}
-      </div>
-    </>
+    <CadastroEmpresaAdicionais>
+      <h1>Empresa - Dados adicionais</h1>
+      <form>
+      <h2>Escolha da Logo (Opcional)</h2>
+        <div className="inputImagemDiv">
+          {!image && (
+            <div>
+              <img src={grupo.logo ? grupo.logo : "https://i.imgur.com/IMKOP10.jpg"} alt="Imagem de perfil"></img>
+            </div>
+          )}
+
+          {image && (
+            <div>
+              <img src={image} alt="Imagem de perfil"></img>
+            </div>
+          )}
+          <input type="file" onChange={lidarComMudancaArquivo} id="arquivo"/>
+
+          <input type="file" class="input-file" id="arquivo" />
+
+          <label for="arquivo" class="custom-label">
+            Escolher Arquivo
+          </label>
+        </div>
+        <div className="BotoesProximoVoltar">
+          <Link to="/cadastro/1">Voltar</Link>
+          <Link to="/cadastro/2">Próximo</Link>
+        </div>
+      </form>
+    </CadastroEmpresaAdicionais>
   );
 };
 
