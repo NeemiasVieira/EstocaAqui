@@ -6,6 +6,12 @@ export const CadastroEmpresa = styled.section`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
+  color: #fff;
+
+  h1{
+    margin-top: 50px;
+    color: #000;
+  }
 
   form {
     background: #111;
@@ -113,6 +119,76 @@ export const CadastroEmpresa = styled.section`
       transform: scale(1.1);
     }
   }
+
+  .ConfirmacaoDeCadastroDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 50px;
+  }
+
+  .imagemCadastro{
+    width: 100px;
+    height: 100px;
+    border-radius: 75px;
+  }
+
+  .FormularioFinal{
+    width: 85vw;
+    max-width: 1200px;
+  }
+
+  .dadosUsuario, .dadosEmpresa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+  }
+
+  .DivImagemConteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 25px;
+    max-width: 400px;
+
+    div, p{
+      max-width: 400px;
+    }
+  }
+
+  .ButtonLink{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #000;
+      transition: all 200ms;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      width: 120px;
+      height: 41.33px;
+      cursor: pointer;
+      border: none;
+  }
+
+  .ButtonLink:hover{
+    transform: scale(1.1);
+  }
+
+  .checkFinal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 75px;
+    color: #2d4
+  }
+
+  
 `;
 
 export const CadastroEmpresaAdicionais = styled.section`

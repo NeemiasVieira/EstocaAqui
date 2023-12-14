@@ -1,6 +1,6 @@
 import estoca_api from "../api";
 
-export class UsuarioService{
+export class GrupoService{
 
     setResposta;
     setErro;
@@ -10,11 +10,11 @@ export class UsuarioService{
         this.setErro = setErro
     }
 
-    async login(email, senha){
-        await estoca_api.post("/usuario/login", {email, senha})
+    async cadastrarGrupo(usuario, grupo){
+       await estoca_api.post("/grupo", { usuario, grupo })
         .then(resposta => this.setResposta(resposta))
         .catch(erro => this.setErro(erro));
-    }
 
-   
+    }
+    
 }

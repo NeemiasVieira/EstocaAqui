@@ -20,7 +20,6 @@ export class UploaderService {
         },
       });
 
-      console.log(resposta.data.link)
       this.setResposta(resposta.data.link);
     } catch (erro) {
       this.setErro(erro.message);

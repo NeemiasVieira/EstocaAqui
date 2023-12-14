@@ -86,7 +86,7 @@ const Login = () => {
           <button onClick={Login}>Login</button>
           <div className="sugestaoCadastro">
             <p>Não tem cadastro?</p>
-            <Link to="/cadastro" className="crieSuaConta">
+            <Link to="/cadastro/1" className="crieSuaConta">
               Crie sua conta
             </Link>
           </div>
