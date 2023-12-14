@@ -1,8 +1,14 @@
-const Entrada = () => {
+const Entrada = ({ entrada, entradaCompleta }) => {
   return (
     <>
-      <p>Produto</p>
-      <p>Quantidade</p>
+      {entradaCompleta && (
+        <section>
+          <p>{entrada.nf}</p>
+          <p>{entrada.id_fornecedor}</p>
+        </section>
+      )}
+      <p>{entrada.tipo}</p>
+      <p>{entrada.descricao}</p>
     </>
   );
 };
