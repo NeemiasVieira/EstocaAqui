@@ -5,6 +5,7 @@ import { Auth } from "./auth";
 import Cadastro1 from "../../paginas/Cadastro/Cadastro1";
 import Cadastro2 from "../../paginas/Cadastro/Cadastro2";
 import Cadastro from "../../paginas/Cadastro/Cadastro";
+import Homepage from "../../paginas/Homepage/Homepage";
 
 export const RouterDOM = () => {
   return (
@@ -20,6 +21,8 @@ export const RouterDOM = () => {
             <Route path="2" element={<Cadastro2 />} />,
           ]}
         />
+
+        <Route path="/homepage" element={<Homepage />} />
       </Routes>
     </HashRouter>
   );
