@@ -10,9 +10,10 @@ export const Navegacao = () => {
     
         <NavegacaoStyle>
             <ul className="navegacao">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/aplicacao">Aplicação</Link></li>
-                <li><Link to="/faq">FAQ</Link></li>
+                <li><Link to="/">Pagina Inicial</Link></li>
+                <li><Link to="/">Funcionamento</Link></li>
+                <li><Link to="/">FAQ</Link></li>
+                <li><Link to="/">Sobre nós</Link></li>
                 <li className="login"><Link to="/login">Login</Link></li>
             </ul>
         </NavegacaoStyle>

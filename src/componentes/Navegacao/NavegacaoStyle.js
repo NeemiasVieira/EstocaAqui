@@ -11,9 +11,9 @@ export const NavegacaoStyle = styled.nav`
     align-items: center;
     gap: 4vw;
     flex-flow: row;
-    background-color: #222;
+    background-color: #111;
     margin: 0;
-    height: 7vh;
+    height: 8vh;
     position: fixed;
     top: 0;
     left: 0;

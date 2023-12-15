@@ -4,6 +4,7 @@ import { faBuilding, faFileSignature, faArrowDownAZ } from "@fortawesome/free-so
 import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Cadastro1 = () => {
   const { grupo, setCnpj, setRazaoSocial, setNomeFantasia } = useCadastroContext();
@@ -117,6 +118,12 @@ const Cadastro1 = () => {
         <div className="BotoesProximoVoltar">
           <button className="ButtonLink" onClick={(e) => botaoProximo(e)}>Próximo</button>
         </div>
+        <div className="sugestaoLogin">
+            <p>Já tem cadastro?</p>
+            <Link to="/login" className="facaLogin">
+              Faça login
+            </Link>
+          </div>
       </form>
     </CadastroEmpresa>
   );

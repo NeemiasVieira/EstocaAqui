@@ -10,12 +10,14 @@ import Cadastro4 from "../../paginas/Cadastro/Cadastro4";
 import Cadastro5 from "../../paginas/Cadastro/Cadastro5";
 import Cadastro6 from "../../paginas/Cadastro/Cadastro6";
 import Cadastro7 from "../../paginas/Cadastro/Cadastro7";
+import PaginaInicial from "../../paginas/PaginaInicial/PaginaInicial";
 
 export const RouterDOM = () => {
   return (
     <HashRouter>
       <Routes>
-        <Route index element={<Login />} path="/" />
+        <Route index element={<PaginaInicial />} path="/" />
+        <Route element={<Login/>} path="/login"/>
 
         <Route
           path="/cadastro"
