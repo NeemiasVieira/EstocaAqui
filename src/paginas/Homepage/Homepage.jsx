@@ -4,13 +4,14 @@ import Entrada from "../../componentes/Entrada/Entrada";
 import Saida from "../../componentes/Saida/Saida";
 import { EntradaService } from "../../serviços/API/modulos/EntradaService";
 import { useEffect, useState } from "react";
+import { SaidaService } from "../../serviços/API/modulos/SaidaService";
 
 const usuario = {
   nome: "Diogo",
   email: "dioguinho",
   outrasPropriedades: "desnecessárias",
 };
-
+/*
 const saidas = [
   {
       "id": 5,
@@ -147,15 +148,19 @@ const saidas = [
       "updatedAt": "2023-12-15T14:27:48.474Z"
   }
 ]
+*/
 
 
 const Homepage = () => {
-  const [entradas, setEntrada] = useState();
-  const [erro, setErro] = useState();
+    const [entradas, setEntrada] = useState();
+    const [saidas, setSaidas] = useState();
+    const [erro, setErro] = useState();
 
-  const entradaService = new EntradaService(setEntrada, setErro);
-
+    const entradaService = new EntradaService(setEntrada, setErro);
+    const saidaService = new SaidaService(setSaidas, setErro)
+ 
   useEffect(() => {
+    saidaService.getSaidas();
     entradaService.getEntradas();
   }, []);
 
@@ -165,8 +170,6 @@ const Homepage = () => {
       <h1>Bem vindo, {usuario.nome}</h1>
       <section>
         <p>Últimas saídas:</p>
-
-       
         {saidas &&
           saidas.map((saida) =>(
         <Saida

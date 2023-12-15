@@ -1,15 +1,19 @@
+import { SaidaService } from "../../serviços/API/modulos/SaidaService";
+import { SaidaStyle } from "./SaidaStyle";
+
+
 const Saida = ({saida, saidaCompleta}) => {
   return (
-    <>
+    <SaidaStyle>
     {saidaCompleta && (
       <section>
-        <p>{saida.nf}</p>
-        <p>{saida.id_usuario}</p>
+        <p>NF: {saida.nf}</p>
+        <p>Usuário: {saida.id_usuario}</p>
       </section>
     )}
-      <p>{saida.tipo}</p>
-      <p>{saida.descricao}</p>
-    </>
+      <p>Tipo: {saida.tipo}</p>
+      <p>Descrição: {saida.descricao}</p>
+    </SaidaStyle>
   );
 };
 
