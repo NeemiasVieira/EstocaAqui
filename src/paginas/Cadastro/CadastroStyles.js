@@ -194,6 +194,32 @@ export const CadastroEmpresa = styled.section`
     color: #2d4
   }
 
+  .sugestaoLogin {
+    margin-top: 5px;
+    color: #000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #fff;
+    }
+
+    a{
+      text-decoration: none;
+    }
+  }
+
+  .facaLogin{
+    font-weight: 600;
+    color: #fff;
+  }
+
   
 `;
 

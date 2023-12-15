@@ -50,7 +50,6 @@ const Login = () => {
     <>
       <LoginMain>
         <Navegacao/>
-        <h1>EstocaAqui - Cadastro</h1>
         <h2>Login</h2>
 
         <form type="submit">
