@@ -1,8 +1,14 @@
-const Saida = () => {
+const Saida = ({saida, saidaCompleta}) => {
   return (
     <>
-      <p>Produto</p>
-      <p>Quantidade</p>
+    {saidaCompleta && (
+      <section>
+        <p>{saida.nf}</p>
+        <p>{saida.id_usuario}</p>
+      </section>
+    )}
+      <p>{saida.tipo}</p>
+      <p>{saida.descricao}</p>
     </>
   );
 };
