@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding, faFileSignature, faArrowDownAZ } from "@fortawesome/free-solid-svg-icons";
 import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
-import { validarCNPJ } from "../../serviços/Validacoes";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro1 = () => {
   const { grupo, setCnpj, setRazaoSocial, setNomeFantasia } = useCadastroContext();
+  const [erro, setErro] = useState();
   const [cnpjValido, setCnpjValido] = useState(true);
+  const navigate = useNavigate();
 
   const formatarCnpj = (cnpj) => {
     // Remove caracteres não numéricos
@@ -48,13 +49,22 @@ const Cadastro1 = () => {
   };
 
   const validarCNPJ = (cnpj) => {
-    const cnpjLimpo = cnpj.replace(/\D/g, '');
-
-    // Lógica de validação do CNPJ
-    // ...
-
-    return true; // Substitua pela lógica de validação real
+    if(cnpj.length === 18) return true
+    else return false;
   };
+
+  const botaoProximo = (e) => {
+    e.preventDefault();
+
+    if(validarCNPJ(grupo.cnpj) && grupo.nome_fantasia.length > 2 && grupo.razao_social.length > 5){
+      setErro(null);
+      navigate("/cadastro/2");
+      return
+    }
+
+    setErro("Todos os campos precisam estar preenchidos corretamente");
+
+  }
 
   return (
     <CadastroEmpresa>
@@ -103,8 +113,9 @@ const Cadastro1 = () => {
             }}
           />
         </div>
+        {erro && (<p className="mensagemDeErro">{erro}</p>)}
         <div className="BotoesProximoVoltar">
-          <Link to="/cadastro/2">Próximo</Link>
+          <button className="ButtonLink" onClick={(e) => botaoProximo(e)}>Próximo</button>
         </div>
       </form>
     </CadastroEmpresa>

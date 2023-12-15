@@ -25,6 +25,7 @@ export const CadastroEmpresa = styled.section`
     border-radius: 10px;
     padding: 20px;
     overflow-x: hidden;
+    margin-bottom: 50px;
   }
 
   label {
@@ -100,7 +101,7 @@ export const CadastroEmpresa = styled.section`
     justify-content: center;
     align-items: center;
     flex-flow: row nowrap;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 10px;
     gap: 50px;
     a {
@@ -120,6 +121,11 @@ export const CadastroEmpresa = styled.section`
     }
   }
 
+  .mensagemDeErro{
+    margin: 10px 0 0 0;
+    color: #F44;
+  }
+
   .ConfirmacaoDeCadastroDiv{
     display: flex;
     justify-content: center;
@@ -136,7 +142,7 @@ export const CadastroEmpresa = styled.section`
 
   .FormularioFinal{
     width: 85vw;
-    max-width: 1200px;
+    max-width: 900px;
   }
 
   .dadosUsuario, .dadosEmpresa{
