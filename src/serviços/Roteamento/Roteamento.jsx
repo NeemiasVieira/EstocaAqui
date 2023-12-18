@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Login from "../../paginas/Login/Login";
 import React from "react";
-import { Auth } from "./auth";
+import Auth from "./auth";
 import Cadastro1 from "../../paginas/Cadastro/Cadastro1";
 import Cadastro2 from "../../paginas/Cadastro/Cadastro2";
 import Cadastro from "../../paginas/Cadastro/Cadastro";
@@ -11,6 +11,7 @@ import Cadastro5 from "../../paginas/Cadastro/Cadastro5";
 import Cadastro6 from "../../paginas/Cadastro/Cadastro6";
 import Cadastro7 from "../../paginas/Cadastro/Cadastro7";
 import PaginaInicial from "../../paginas/PaginaInicial/PaginaInicial";
+import Produtos from "../../paginas/Produtos/Produtos";
 
 export const RouterDOM = () => {
   return (
@@ -18,6 +19,7 @@ export const RouterDOM = () => {
       <Routes>
         <Route index element={<PaginaInicial />} path="/" />
         <Route element={<Login/>} path="/login"/>
+        <Route element={<Auth><Produtos/></Auth>} path="/homepage1"/>
 
         <Route
           path="/cadastro"

@@ -43,7 +43,7 @@ const Login = () => {
     localStorage.setItem("token", resposta.data.token);
     localStorage.setItem("nome", resposta.data.usuario.nome);
     localStorage.setItem("userID", resposta.data.usuario.id);
-    navigate("/sistema/home");
+    navigate("/homepage1");
   }
 
   return (
