@@ -13,6 +13,17 @@ const usuario = {
   outrasPropriedades: "desnecessárias",
 };
 
+function obterUltimosTresElementos(array) {
+  // Verifica se o array tem pelo menos 3 elementos
+  if (array.length < 3) {
+    return array; // Retorna o array inteiro se tiver menos de 3 elementos
+  } else {
+    // Retorna os três últimos elementos do array
+    return array.slice(array.length - 3);
+  }
+}
+
+
 const Homepage = () => {
     const [entradas, setEntrada] = useState();
     const [saidas, setSaidas] = useState();
@@ -35,7 +46,7 @@ const Homepage = () => {
             <EntradaColuna>
                     <TituloColuna>Últimas entradas:</TituloColuna>
                     {entradas &&
-                    entradas.map((entrada) => (
+                    obterUltimosTresElementos(entradas).map((entrada) => (
                         <Entrada
                         key={entrada.id}
                         entrada={entrada}
@@ -46,7 +57,7 @@ const Homepage = () => {
             <SaidaColuna>
                 <TituloColuna>Últimas saídas:</TituloColuna>
                 {saidas &&
-                saidas.map((saida) =>(
+                obterUltimosTresElementos(saidas).map((saida) => (
                 <Saida
                     key={saida.id}
                     saida={saida}
@@ -56,9 +67,6 @@ const Homepage = () => {
             </SaidaColuna>
         </HomePageContainer>
       </HomeBody>
-      <button>Estoque</button>
-      <button>Entradas</button>
-      <button>Saídas</button>
       <Footer />
     </>
   );
