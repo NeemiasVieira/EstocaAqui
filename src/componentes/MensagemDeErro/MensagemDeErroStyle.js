@@ -7,12 +7,12 @@ export const MensagemErroStyle = styled.section`
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: #aaa;
+  background-color: var(--cinza);
 
   div {
     max-width: 500px;
     width: 40vw;
-    background-color: #111;
+    background-color: var(--preto-forte);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ export const MensagemErroStyle = styled.section`
   }
 
   p {
-    color: #f33;
+    color: var(--vermelho-claro);
     font-size: 1rem;
     font-weight: 700;
     padding: 10px;

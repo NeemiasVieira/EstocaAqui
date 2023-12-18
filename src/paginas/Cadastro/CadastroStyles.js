@@ -6,22 +6,22 @@ export const CadastroEmpresa = styled.section`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  color: #fff;
+  color: var(--branco);
 
   h1{
     margin-top: 50px;
-    color: #000;
+    color: var(--preto);
   }
 
   form {
-    background: #111;
+    background: var(--preto-forte);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
     width: 50vw;
-    max-width: 450px;
-    border: solid #ccc 3px;
+    max-width: 475px;
+    border: solid var(--branco) 3px;
     border-radius: 10px;
     padding: 20px;
     overflow-x: hidden;
@@ -30,7 +30,7 @@ export const CadastroEmpresa = styled.section`
 
   label {
     text-align: center;
-    color: #fff;
+    color: var(--branco);
     font-weight: 600;
     margin: 5px 0;
     font-size: 1rem;
@@ -41,14 +41,14 @@ export const CadastroEmpresa = styled.section`
     justify-content: center;
     align-items: center;
     height: 50px;
-    border-right: solid #000 2px;
+    border-right: solid var(--preto) 2px;
     width: 60px;
   }
 
   svg {
     font-size: 1.8rem;
     height: 35px;
-    color: #000;
+    color: var(--preto);
     padding-right: 15px;
   }
 
@@ -57,7 +57,7 @@ export const CadastroEmpresa = styled.section`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: #fff;
+    background: var(--branco);
     padding: 0 10px;
     border-radius: 5px;
     max-height: 50px;
@@ -70,8 +70,8 @@ export const CadastroEmpresa = styled.section`
     padding: 3px;
     max-width: 300px;
     border: none;
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
     font-size: 1rem;
   }
 
@@ -88,8 +88,8 @@ export const CadastroEmpresa = styled.section`
     border: none;
     font-size: 1.2em;
     transition: all 300ms;
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
 
     :hover {
       transform: scale(1.1);
@@ -109,9 +109,9 @@ export const CadastroEmpresa = styled.section`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: #000;
+      color: var(--preto);
       transition: all 200ms;
-      background-color: #fff;
+      background-color: var(--branco);
       padding: 10px;
       border-radius: 10px;
       width: 100px;
@@ -170,9 +170,9 @@ export const CadastroEmpresa = styled.section`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: #000;
+      color: var(--preto);
       transition: all 200ms;
-      background-color: #fff;
+      background-color: var(--branco);
       padding: 10px;
       border-radius: 10px;
       width: 120px;
@@ -196,7 +196,7 @@ export const CadastroEmpresa = styled.section`
 
   .sugestaoLogin {
     margin-top: 5px;
-    color: #000;
+    color: var(--preto);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -207,7 +207,7 @@ export const CadastroEmpresa = styled.section`
     p {
       font-size: 0.9rem;
       font-weight: 300;
-      color: #fff;
+      color: var(--branco);
     }
 
     a{
@@ -217,7 +217,7 @@ export const CadastroEmpresa = styled.section`
 
   .facaLogin{
     font-weight: 600;
-    color: #fff;
+    color: var(--branco);
   }
 
   
@@ -231,7 +231,7 @@ export const CadastroEmpresaAdicionais = styled.section`
   flex-flow: column wrap;
 
   form {
-    background: #111;
+    background: var(--preto-forte);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,7 +242,7 @@ export const CadastroEmpresaAdicionais = styled.section`
     border-radius: 10px;
     padding: 20px;
     overflow-x: hidden;
-    color: #fff;
+    color: var(--branco);
   }
   .BotoesProximoVoltar {
     display: flex;
@@ -257,9 +257,9 @@ export const CadastroEmpresaAdicionais = styled.section`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: #000;
+      color: var(--preto);
       transition: all 200ms;
-      background-color: #fff;
+      background-color: var(--branco);;
       padding: 10px;
       border-radius: 10px;
       width: 100px;
@@ -289,8 +289,8 @@ export const CadastroEmpresaAdicionais = styled.section`
   }
 
   .custom-label {
-      background-color: #3498db;
-      color: #fff;
+      background-color: var(--azul-botao);
+      color: var(--branco);
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;

@@ -17,24 +17,24 @@ export const LoginMain = styled.main`
   }
 
   form {
-    background: #111;
+    background: var(--preto-forte);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
     width: 50vw;
-    max-width: 450px;
-    height: 50vh;
-    max-height: 400px;
+    max-width: 475px;
+    height: 55vh;
+    max-height: 450px;
     border: solid #ccc 3px;
     border-radius: 10px;
     padding: 20px;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   label {
     text-align: center;
-    color: #fff;
+    color: var(--branco);
     font-weight: 600;
     margin: 10px 0;
     font-size: 1.2rem;
@@ -45,13 +45,13 @@ export const LoginMain = styled.main`
     justify-content: center;
     align-items: center;
     height: 100%;
-    border-right: solid #000 2px;
+    border-right: solid var(--preto) 2px;
   }
 
   svg{
     font-size: 1.8rem;
     height: 45px;
-    color: #000;
+    color: var(--preto);
     padding-right: 15px;    
   }
 
@@ -60,7 +60,7 @@ export const LoginMain = styled.main`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: #fff;
+    background: var(--branco);
     padding: 0 10px;
     border-radius: 5px;
   }
@@ -73,8 +73,8 @@ export const LoginMain = styled.main`
     padding: 10px;
     max-width: 300px;
     border: none;    
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
   }
 
   input:focus{
@@ -90,8 +90,8 @@ export const LoginMain = styled.main`
     border: none;
     font-size: 1.2em;
     transition: all 300ms;
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
 
     :hover {
       transform: scale(1.1);
@@ -100,13 +100,13 @@ export const LoginMain = styled.main`
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: var(--branco);
     font-size: 1rem;
   }
 
   .sugestaoCadastro {
     margin-top: 20px;
-    color: #000;
+    color: var(--preto);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -117,13 +117,13 @@ export const LoginMain = styled.main`
     p {
       font-size: 0.9rem;
       font-weight: 300;
-      color: #fff;
+      color: var(--branco);
     }
   }
 
   .crieSuaConta{
     font-weight: 600;
-    color: #fff;
+    color: var(--branco);
   }
 
   @media screen and (max-width: 480px) {
@@ -137,7 +137,7 @@ export const LoginMain = styled.main`
     }
     form {
       width: 80vw;
-      max-width: 450px;
+      max-width: 475px;
       height: 45vh;
     }
 

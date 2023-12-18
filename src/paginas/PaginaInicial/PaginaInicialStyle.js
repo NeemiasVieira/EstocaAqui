@@ -54,7 +54,7 @@ min-height: 95vh;
     flex-flow: row nowrap;
     gap: 25px;
     max-width: 490px;
-    border: solid #000 1px;
+    border: solid var(--preto) 1px;
     padding: 10px;
     border-radius: 10px;
 
@@ -93,14 +93,13 @@ min-height: 95vh;
     color: #4CAF50;
 }
 
-/* Estilos para a seção de recursos */
 .recursos {
   margin-top: 20px;
 }
 
 .recursos h2 {
   font-size: 24px;
-  color: #333; /* Cor do texto */
+  color: var(--cinza-escuro); 
 }
 
 .recursos ul {
@@ -111,19 +110,19 @@ min-height: 95vh;
 .recursos li {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #555; /* Cor do texto */
+  color: #555; 
   display: flex;
   align-items: center;
 }
 
 .recursos li svg {
   margin-right: 10px;
-  color: #4CAF50; /* Cor do ícone (verde) */
+  color: #4CAF50; 
 }
 
 .comeceAgora {
-    background-color: #123;
-    color: #fff;
+    background-color: var(--azul-primario);
+    color: var(--branco);
     text-align: center;
     padding: 50px 0;
     width: 100vw;
@@ -140,8 +139,8 @@ min-height: 95vh;
   }
 
   .comeceAgora button {
-    background-color: #fff; 
-    color: #000; 
+    background-color: var(--branco); 
+    color: var(--preto); 
     font-size: 16px;
     padding: 10px 20px;
     border: none;

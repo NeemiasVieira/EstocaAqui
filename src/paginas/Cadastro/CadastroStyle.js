@@ -17,13 +17,13 @@ export const CadastroMain = styled.main`
   }
 
   form {
-    background: #111;
+    background: var(--preto-forte);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
     width: 50vw;
-    max-width: 450px;
+    max-width: 475px;
     border: solid #ccc 3px;
     border-radius: 10px;
     padding: 20px;
@@ -32,7 +32,7 @@ export const CadastroMain = styled.main`
 
   label {
     text-align: center;
-    color: #fff;
+    color: var(--branco);
     font-weight: 600;
     margin: 5px 0;
     font-size: 1rem;
@@ -43,14 +43,14 @@ export const CadastroMain = styled.main`
     justify-content: center;
     align-items: center;
     height: 50px;
-    border-right: solid #000 2px;
+    border-right: solid var(--preto) 2px;
     width: 60px;
   }
 
   svg {
     font-size: 1.8rem;
     height: 35px;
-    color: #000;
+    color: var(--preto);
     padding-right: 15px;
   }
 
@@ -59,7 +59,7 @@ export const CadastroMain = styled.main`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: #fff;
+    background: var(--branco);
     padding: 0 10px;
     border-radius: 5px;
     max-height: 50px;
@@ -72,8 +72,8 @@ export const CadastroMain = styled.main`
     padding: 3px;
     max-width: 300px;
     border: none;
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
     font-size: 1rem;
   }
 
@@ -90,8 +90,8 @@ export const CadastroMain = styled.main`
     border: none;
     font-size: 1.2em;
     transition: all 300ms;
-    background: #fff;
-    color: #000;
+    background: var(--branco);
+    color: var(--preto);
 
     :hover {
       transform: scale(1.1);
@@ -105,7 +105,7 @@ export const CadastroMain = styled.main`
 
   .sugestaoCadastro {
     margin-top: 20px;
-    color: #fff;
+    color: var(--branco);
     display: flex;
     font-size: 1rem;
     flex-flow: row nowrap;
@@ -119,7 +119,7 @@ export const CadastroMain = styled.main`
     }
 
     .jaPossuiCadastro {
-      color: #fff;
+      color: var(--branco);
       font-weight: 600;
     }
   }
@@ -134,7 +134,7 @@ export const CadastroMain = styled.main`
     }
     form {
       width: 80vw;
-      max-width: 450px;
+      max-width: 475px;
       height: 55vh;
       max-height: 550px;
     }
@@ -142,7 +142,7 @@ export const CadastroMain = styled.main`
     input {
       width: 50vw;
       max-width: 400px;
-      color: #000;
+      color: var(--preto);
     }
     button {
       width: 150px;
@@ -155,7 +155,7 @@ export const CadastroMain = styled.main`
     }
 
     .sugestaoCadastro {
-      color: #fff;
+      color: var(--branco);
       overflow-x: hidden;
       max-width: 55vw;
       margin-top: 5px;
