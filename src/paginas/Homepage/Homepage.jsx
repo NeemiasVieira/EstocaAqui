@@ -5,151 +5,13 @@ import Saida from "../../componentes/Saida/Saida";
 import { EntradaService } from "../../serviços/API/modulos/EntradaService";
 import { useEffect, useState } from "react";
 import { SaidaService } from "../../serviços/API/modulos/SaidaService";
+import { HomeBody, HomePageContainer, TituloColuna, EntradaColuna, SaidaColuna } from "./HomepageStyle";
 
 const usuario = {
   nome: "Diogo",
   email: "dioguinho",
   outrasPropriedades: "desnecessárias",
 };
-/*
-const saidas = [
-  {
-      "id": 5,
-      "tipo": "Outros",
-      "descricao": "hp na casa do neemias",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 10
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 9
-          }
-      ],
-      "createdAt": "2023-12-15T14:23:58.682Z",
-      "updatedAt": "2023-12-15T14:23:58.682Z"
-  },
-  {
-      "id": 6,
-      "tipo": "Outros",
-      "descricao": "hp na casa do neemias",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 8
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 9
-          },
-          {
-              "id_produto": 6,
-              "quantidade": 10
-          }
-      ],
-      "createdAt": "2023-12-15T14:26:11.019Z",
-      "updatedAt": "2023-12-15T14:26:11.019Z"
-  },
-  {
-      "id": 7,
-      "tipo": "Outros",
-      "descricao": "hp na casa do diogo",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 8
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 9
-          },
-          {
-              "id_produto": 6,
-              "quantidade": 10
-          }
-      ],
-      "createdAt": "2023-12-15T14:26:21.651Z",
-      "updatedAt": "2023-12-15T14:26:21.651Z"
-  },
-  {
-      "id": 8,
-      "tipo": "Outros",
-      "descricao": "hp na casa do gabriel",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 2
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 1
-          },
-          {
-              "id_produto": 6,
-              "quantidade": 9
-          }
-      ],
-      "createdAt": "2023-12-15T14:27:25.484Z",
-      "updatedAt": "2023-12-15T14:27:25.484Z"
-  },
-  {
-      "id": 9,
-      "tipo": "Outros",
-      "descricao": "hp na casa do gabriel",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 2
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 1
-          },
-          {
-              "id_produto": 6,
-              "quantidade": 9
-          }
-      ],
-      "createdAt": "2023-12-15T14:27:40.577Z",
-      "updatedAt": "2023-12-15T14:27:40.577Z"
-  },
-  {
-      "id": 10,
-      "tipo": "Outros",
-      "descricao": "hp na casa do gabriel",
-      "nf": "32191105570714000825550010059146621133082968",
-      "id_usuario": 12,
-      "item": [
-          {
-              "id_produto": 4,
-              "quantidade": 2
-          },
-          {
-              "id_produto": 5,
-              "quantidade": 1
-          },
-          {
-              "id_produto": 6,
-              "quantidade": 9
-          }
-      ],
-      "createdAt": "2023-12-15T14:27:48.474Z",
-      "updatedAt": "2023-12-15T14:27:48.474Z"
-  }
-]
-*/
-
 
 const Homepage = () => {
     const [entradas, setEntrada] = useState();
@@ -167,29 +29,33 @@ const Homepage = () => {
   return (
     <>
       <Navegacao />
-      <h1>Bem vindo, {usuario.nome}</h1>
-      <section>
-      <h2>Últimas entradas:</h2>
-        {entradas &&
-          entradas.map((entrada) => (
-            <Entrada
-              key={entrada.id}
-              entrada={entrada}
-              entradaCompleta={false}
-            />
-          ))}
-      </section>
-      <section>
-        <h2>Últimas saídas:</h2>
-        {saidas &&
-          saidas.map((saida) =>(
-        <Saida
-            key={saida.id}
-            saida={saida}
-            saidaCompleta={false}
-        />
-          ))}
-      </section>
+      <HomeBody>
+        <h1>Bem vindo, {usuario.nome}</h1>
+        <HomePageContainer>
+            <EntradaColuna>
+                    <TituloColuna>Últimas entradas:</TituloColuna>
+                    {entradas &&
+                    entradas.map((entrada) => (
+                        <Entrada
+                        key={entrada.id}
+                        entrada={entrada}
+                        entradaCompleta={false}
+                        />
+                    ))}
+            </EntradaColuna>
+            <SaidaColuna>
+                <TituloColuna>Últimas saídas:</TituloColuna>
+                {saidas &&
+                saidas.map((saida) =>(
+                <Saida
+                    key={saida.id}
+                    saida={saida}
+                    saidaCompleta={false}
+                />
+                ))}
+            </SaidaColuna>
+        </HomePageContainer>
+      </HomeBody>
       <button>Estoque</button>
       <button>Entradas</button>
       <button>Saídas</button>
