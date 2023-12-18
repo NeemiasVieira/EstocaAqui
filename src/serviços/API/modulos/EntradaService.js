@@ -13,7 +13,7 @@ export class EntradaService {
     const token = {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDI2NDgzOTgsImV4cCI6MTcwMjY3MzU5OCwic3ViIjoiMTIifQ.95nViZWVPXS9gpMBLgDkuk7YOEnyRfSGEdHL4hzG-8M",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDI5MDYxNTEsImV4cCI6MTcwMjkzMTM1MSwic3ViIjoiNCJ9._cKlRInRdD85X56U-IbYy_lTda51N1Y9VfAcKaiKlxY",
       },
     };
 

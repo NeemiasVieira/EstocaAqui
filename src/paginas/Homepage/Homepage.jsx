@@ -169,18 +169,7 @@ const Homepage = () => {
       <Navegacao />
       <h1>Bem vindo, {usuario.nome}</h1>
       <section>
-        <p>Últimas saídas:</p>
-        {saidas &&
-          saidas.map((saida) =>(
-        <Saida
-            key={saida.id}
-            saida={saida}
-            saidaCompleta={false}
-        />
-          ))}       
-
-
-        <p>Últimas entradas:</p>
+      <h2>Últimas entradas:</h2>
         {entradas &&
           entradas.map((entrada) => (
             <Entrada
@@ -188,6 +177,17 @@ const Homepage = () => {
               entrada={entrada}
               entradaCompleta={false}
             />
+          ))}
+      </section>
+      <section>
+        <h2>Últimas saídas:</h2>
+        {saidas &&
+          saidas.map((saida) =>(
+        <Saida
+            key={saida.id}
+            saida={saida}
+            saidaCompleta={false}
+        />
           ))}
       </section>
       <button>Estoque</button>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SaidaStyle = styled.div`
+export const EntradaStyle = styled.div`
   padding-left: 20px;
   margin: 10px;
   display: flex;
@@ -9,12 +9,12 @@ export const SaidaStyle = styled.div`
   width: 400px;
 `;
 
-export const SaidaSection = styled.section`
+export const EntradaSection = styled.section`
   border: 2px solid #000; /* Adicione a cor desejada para o contorno */
   border-radius: 5px;
   padding: 10px; /* Adicione espaçamento interno conforme necessário */
 `;
 
-export const SaidaParagraph = styled.p`
+export const EntradaParagraph = styled.p`
   margin: 0; /* Remova a margem padrão dos parágrafos */
 `;
