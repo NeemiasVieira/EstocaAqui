@@ -20,7 +20,6 @@ const Cadastro2 = () => {
 
   useEffect(
     () => {
-      if (erro) console.log(erro);
       if (resposta) {
         setImamge(String(resposta));
         setLogo(resposta);       

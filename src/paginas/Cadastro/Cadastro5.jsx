@@ -20,7 +20,6 @@ const Cadastro5 = () => {
 
   useEffect(
     () => {
-      if (erro) console.log(erro);
       if (resposta) {
         setImamge(String(resposta));
         setImagemDePerfil(resposta);       

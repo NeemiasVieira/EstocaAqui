@@ -13,8 +13,6 @@ const Cadastro6 = () => {
   const grupoService = new GrupoService(setRespostaGrupo, setErro);
 
   useEffect(() => {
-    if(respostaGrupo) console.log(respostaGrupo)
-    if(erro) console.log(erro)
     if(respostaGrupo?.status == 201) navigate("/cadastro/7");    
   }, [respostaGrupo, erro])
 

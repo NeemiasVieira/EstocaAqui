@@ -5,6 +5,7 @@ import { faFont, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
 import { useNavigate } from "react-router-dom";
+import { buscaCPF } from "../../serviços/API/modulos/UsuarioSerivce";
 
 
 const validarCPF = (cpf) => {
@@ -87,6 +88,7 @@ const Cadastro3 = () => {
   const navigate = useNavigate();
 
   const onChangeCPF = (e) => {
+
     const novoCpf = e.target.value;
     const cpfFormatado = formatarCPF(novoCpf);
     setCpf(cpfFormatado);
@@ -99,16 +101,31 @@ const Cadastro3 = () => {
     }
   };
 
-  const botaoProximo = (e) => {
+  const botaoProximo = async(e) => {
     e.preventDefault();
+
+    const CPFJaCadastrado = await buscaCPF(usuario.cpf);
+
+    if(usuario.nome.length <= 5){
+      setErro("O nome deve conter ao menos 6 caracteres.");
+      return;      
+    } 
+
+    if(!cpfValido){
+      setErro("CPF inválido.");
+      return;
+    } 
+
+    if(CPFJaCadastrado){
+      setErro("O CPF já foi cadastrado no sistema.")
+      return;
+    }
 
     if(cpfValido && usuario.nome.length > 5){
       setErro(null);
       navigate("/cadastro/4");
       return
     }
-
-    setErro("Todos os campos precisam estar preenchidos corretamente");
 
   }
 
@@ -152,7 +169,7 @@ const Cadastro3 = () => {
         {erro && (<p className="mensagemDeErro">{erro}</p>)}
         <div className="BotoesProximoVoltar">
           <Link to="/cadastro/2">Voltar</Link>
-          <button className="ButtonLink" onClick={(e) => botaoProximo(e)}>Próximo</button>
+          <button className="ButtonLink" onClick={async(e) => await botaoProximo(e)}>Próximo</button>
         </div>
       </form>
     </CadastroEmpresa>

@@ -26,8 +26,6 @@ const Login = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {console.log(resposta)}, [resposta, erro]);
-
   if (erro)
     return (
       <MensagemDeErro

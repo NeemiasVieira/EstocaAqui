@@ -18,3 +18,8 @@ export class GrupoService{
     }
     
 }
+
+export const buscaCNPJ = async(cnpj) => {
+    const resposta = await estoca_api.get(`/grupo/verifica-cnpj?cnpj=${cnpj}`);
+    return resposta.data;
+}

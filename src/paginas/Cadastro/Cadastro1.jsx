@@ -5,6 +5,7 @@ import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { buscaCNPJ } from "../../serviços/API/modulos/GrupoService";
 
 const Cadastro1 = () => {
   const { grupo, setCnpj, setRazaoSocial, setNomeFantasia } = useCadastroContext();
@@ -54,13 +55,21 @@ const Cadastro1 = () => {
     else return false;
   };
 
-  const botaoProximo = (e) => {
+  const botaoProximo = async(e) => {
     e.preventDefault();
+    
+    const cnpjJaExiste = await buscaCNPJ(grupo.cnpj);
+
+    if(cnpjJaExiste){
+      setErro("O CNPJ já foi cadastrado no sistema.");
+      return;
+    }
 
     if(validarCNPJ(grupo.cnpj) && grupo.nome_fantasia.length > 2 && grupo.razao_social.length > 5){
+
       setErro(null);
       navigate("/cadastro/2");
-      return
+  
     }
 
     setErro("Todos os campos precisam estar preenchidos corretamente");
@@ -116,7 +125,7 @@ const Cadastro1 = () => {
         </div>
         {erro && (<p className="mensagemDeErro">{erro}</p>)}
         <div className="BotoesProximoVoltar">
-          <button className="ButtonLink" onClick={(e) => botaoProximo(e)}>Próximo</button>
+          <button className="ButtonLink" onClick={async(e) => await botaoProximo(e)}>Próximo</button>
         </div>
         <div className="sugestaoLogin">
             <p>Já tem cadastro?</p>
