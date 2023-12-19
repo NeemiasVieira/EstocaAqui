@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CadastroEmpresa = styled.section`
+
   min-height: 90vh;
   display: flex;
   justify-content: center;
@@ -8,10 +9,12 @@ export const CadastroEmpresa = styled.section`
   flex-flow: column wrap;
   color: var(--branco);
 
-  h1{
+  h1 {
     margin-top: 50px;
     color: var(--preto);
   }
+
+  //FORMULÁRIO  
 
   form {
     background: var(--preto-forte);
@@ -27,7 +30,7 @@ export const CadastroEmpresa = styled.section`
     overflow-x: hidden;
     margin-bottom: 50px;
   }
-
+  
   label {
     text-align: center;
     color: var(--branco);
@@ -35,32 +38,12 @@ export const CadastroEmpresa = styled.section`
     margin: 5px 0;
     font-size: 1rem;
   }
-
-  .divIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    border-right: solid var(--preto) 2px;
-    width: 60px;
-  }
-
+  
   svg {
     font-size: 1.8rem;
     height: 35px;
     color: var(--preto);
     padding-right: 15px;
-  }
-
-  .divInput {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background: var(--branco);
-    padding: 0 10px;
-    border-radius: 5px;
-    max-height: 50px;
   }
 
   input {
@@ -77,6 +60,26 @@ export const CadastroEmpresa = styled.section`
 
   input:focus {
     outline: none;
+  }
+
+  .divIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-right: solid var(--preto) 2px;
+    width: 60px;
+  }
+
+  .divInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--branco);
+    padding: 0 10px;
+    border-radius: 5px;
+    max-height: 50px;
   }
 
   .botaoCadastrar {
@@ -121,12 +124,12 @@ export const CadastroEmpresa = styled.section`
     }
   }
 
-  .mensagemDeErro{
+  .mensagemDeErro {
     margin: 10px 0 0 0;
-    color: #F44;
+    color: #f44;
   }
 
-  .ConfirmacaoDeCadastroDiv{
+  .ConfirmacaoDeCadastroDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,25 +137,26 @@ export const CadastroEmpresa = styled.section`
     gap: 50px;
   }
 
-  .imagemCadastro{
+  .imagemCadastro {
     width: 100px;
     height: 100px;
     border-radius: 75px;
   }
 
-  .FormularioFinal{
+  .FormularioFinal {
     width: 85vw;
     max-width: 900px;
   }
 
-  .dadosUsuario, .dadosEmpresa{
+  .dadosUsuario,
+  .dadosEmpresa {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
   }
 
-  .DivImagemConteudo{
+  .DivImagemConteudo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,38 +164,39 @@ export const CadastroEmpresa = styled.section`
     gap: 25px;
     max-width: 400px;
 
-    div, p{
+    div,
+    p {
       max-width: 400px;
     }
   }
 
-  .ButtonLink{
+  .ButtonLink {
     display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      color: var(--preto);
-      transition: all 200ms;
-      background-color: var(--branco);
-      padding: 10px;
-      border-radius: 10px;
-      width: 120px;
-      height: 41.33px;
-      cursor: pointer;
-      border: none;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--preto);
+    transition: all 200ms;
+    background-color: var(--branco);
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    height: 41.33px;
+    cursor: pointer;
+    border: none;
   }
 
-  .ButtonLink:hover{
+  .ButtonLink:hover {
     transform: scale(1.1);
   }
 
-  .checkFinal{
+  .checkFinal {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
     height: 75px;
-    color: #2d4
+    color: #2d4;
   }
 
   .sugestaoLogin {
@@ -210,17 +215,15 @@ export const CadastroEmpresa = styled.section`
       color: var(--branco);
     }
 
-    a{
+    a {
       text-decoration: none;
     }
   }
 
-  .facaLogin{
+  .facaLogin {
     font-weight: 600;
     color: var(--branco);
   }
-
-  
 `;
 
 export const CadastroEmpresaAdicionais = styled.section`
@@ -244,6 +247,7 @@ export const CadastroEmpresaAdicionais = styled.section`
     overflow-x: hidden;
     color: var(--branco);
   }
+
   .BotoesProximoVoltar {
     display: flex;
     justify-content: center;
@@ -259,7 +263,7 @@ export const CadastroEmpresaAdicionais = styled.section`
       text-decoration: none;
       color: var(--preto);
       transition: all 200ms;
-      background-color: var(--branco);;
+      background-color: var(--branco);
       padding: 10px;
       border-radius: 10px;
       width: 100px;
@@ -269,13 +273,13 @@ export const CadastroEmpresaAdicionais = styled.section`
     }
   }
 
-  img{
+  img {
     width: 200px;
     height: 200px;
     border-radius: 100px;
   }
 
-  .inputImagemDiv{
+  .inputImagemDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,22 +287,22 @@ export const CadastroEmpresaAdicionais = styled.section`
     gap: 50px;
   }
 
-  input{
+  input {
     position: absolute;
     left: -9999px;
   }
 
   .custom-label {
-      background-color: var(--azul-botao);
-      color: var(--branco);
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      display: inline-block;
-      transition: all 200ms;
-    }
+    background-color: var(--azul-botao);
+    color: var(--branco);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 200ms;
+  }
 
-    .custom-label:hover{
-      transform: scale(1.1);
-    }
+  .custom-label:hover {
+    transform: scale(1.1);
+  }
 `;

@@ -79,8 +79,6 @@ const formatarCPF = (cpf) => {
   return cpfFormatado;
 };
 
-
-
 const Cadastro3 = () => {
   const { usuario, setNome, setCpf } = useCadastroContext();
   const [cpfValido, setCpfValido] = useState(false);
@@ -104,17 +102,22 @@ const Cadastro3 = () => {
   const botaoProximo = async(e) => {
     e.preventDefault();
 
-    const CPFJaCadastrado = await buscaCPF(usuario.cpf);
-
+    if(usuario.cpf.length === 0 || usuario.nome.length === 0){
+      setErro("Todos os campos devem ser preenchidos.")
+      return;
+    }
+    
     if(usuario.nome.length <= 5){
       setErro("O nome deve conter ao menos 6 caracteres.");
       return;      
     } 
-
+    
     if(!cpfValido){
       setErro("CPF inválido.");
       return;
     } 
+    
+    const CPFJaCadastrado = await buscaCPF(usuario.cpf);
 
     if(CPFJaCadastrado){
       setErro("O CPF já foi cadastrado no sistema.")

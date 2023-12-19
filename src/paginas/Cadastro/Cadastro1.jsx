@@ -45,8 +45,6 @@ const Cadastro1 = () => {
     // Validação ao completar o CNPJ
     if (novoCnpj.length === 18) {
       setCnpjValido(validarCNPJ(novoCnpj));
-    } else {
-      setCnpjValido(true); // Reinicia a validação se o CNPJ não estiver completo
     }
   };
 
@@ -57,6 +55,27 @@ const Cadastro1 = () => {
 
   const botaoProximo = async(e) => {
     e.preventDefault();
+    
+    
+    if(grupo.cnpj.length < 18){
+      
+      if(grupo.cnpj.length === 0){
+        setErro("O CNPJ é obrigatório.")
+        return;
+      }
+      setErro("CNPJ incompleto.")
+      return;
+    }
+    
+    if(grupo.nome_fantasia.length < 2){
+      setErro("O campo nome fantasia precisa estar preenchido.")
+      return;
+    }
+    
+    if(grupo.razao_social.length <= 5){
+      setErro("O campo razão social precisa estar preenchido.");
+      return;
+    }
     
     const cnpjJaExiste = await buscaCNPJ(grupo.cnpj);
 
@@ -71,8 +90,6 @@ const Cadastro1 = () => {
       navigate("/cadastro/2");
   
     }
-
-    setErro("Todos os campos precisam estar preenchidos corretamente");
 
   }
 

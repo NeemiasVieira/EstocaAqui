@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Image, Transformation } from "cloudinary-react";
 import { useCadastroContext } from "../../contextos/CadastroContext";
 import { UploaderService } from "../../serviços/API/modulos/UploaderService";
 import { CadastroEmpresaAdicionais } from "./CadastroStyles";
