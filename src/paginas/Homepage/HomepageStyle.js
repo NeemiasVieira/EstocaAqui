@@ -2,20 +2,18 @@ import styled from "styled-components";
 
 export const HomeBody = styled.body`
     margin: 0;
-    background-color: #003049;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
-    h1{
-        color: white;
-    }
 `;
 
 export const HomePageContainer = styled.section`
     border: solid;
     border-radius: 10px;
-    background-color: white;
+    border-color: #fff;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +28,8 @@ export const EntradaColuna = styled.div`
 `;
 
 export const TituloColuna = styled.h2`
+font-weight: bold;
+color: #fff;
 `;
 
 export const SaidaColuna = styled.div`

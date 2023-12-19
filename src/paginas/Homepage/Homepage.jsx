@@ -7,18 +7,12 @@ import { useEffect, useState } from "react";
 import { SaidaService } from "../../serviços/API/modulos/SaidaService";
 import { HomeBody, HomePageContainer, TituloColuna, EntradaColuna, SaidaColuna } from "./HomepageStyle";
 
-const usuario = {
-  nome: "Diogo",
-  email: "dioguinho",
-  outrasPropriedades: "desnecessárias",
-};
-
 function obterUltimosTresElementos(array) {
-  // Verifica se o array tem pelo menos 3 elementos
+
   if (array.length < 3) {
-    return array; // Retorna o array inteiro se tiver menos de 3 elementos
+    return array;
   } else {
-    // Retorna os três últimos elementos do array
+
     return array.slice(array.length - 3);
   }
 }
@@ -31,6 +25,8 @@ const Homepage = () => {
 
     const entradaService = new EntradaService(setEntrada, setErro);
     const saidaService = new SaidaService(setSaidas, setErro)
+
+    const nomeUsuario = localStorage.getItem("nome")
  
   useEffect(() => {
     saidaService.getSaidas();
@@ -41,7 +37,7 @@ const Homepage = () => {
     <>
       <Navegacao />
       <HomeBody>
-        <h1>Bem vindo, {usuario.nome}</h1>
+        <h1>Bem vindo, {nomeUsuario}</h1>
         <HomePageContainer>
             <EntradaColuna>
                     <TituloColuna>Últimas entradas:</TituloColuna>

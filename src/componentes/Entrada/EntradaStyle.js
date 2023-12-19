@@ -10,7 +10,10 @@ export const EntradaStyle = styled.div`
 `;
 
 export const EntradaSection = styled.section`
-  border: 2px solid #000; /* Adicione a cor desejada para o contorno */
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #fff; /* Adicione a cor desejada para o contorno */
   border-radius: 5px;
   padding: 10px; /* Adicione espaçamento interno conforme necessário */
   min-width: 500px;

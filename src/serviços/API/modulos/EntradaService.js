@@ -13,7 +13,7 @@ export class EntradaService {
     const token = {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDI5MDYxNTEsImV4cCI6MTcwMjkzMTM1MSwic3ViIjoiNCJ9._cKlRInRdD85X56U-IbYy_lTda51N1Y9VfAcKaiKlxY",
+        `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
