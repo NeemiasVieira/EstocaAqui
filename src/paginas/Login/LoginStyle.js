@@ -6,6 +6,7 @@ export const LoginMain = styled.main`
   justify-content: center;
   align-items: center;
   min-height: 93vh;
+  overflow-x: hidden;
 
   h1 {
     margin: 0;
@@ -36,26 +37,43 @@ export const LoginMain = styled.main`
     text-align: center;
     color: var(--branco);
     font-weight: 600;
-    margin: 10px 0;
-    font-size: 1.2rem;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  svg {
+    font-size: 1.8rem;
+    height: 35px;
+    color: var(--preto);
+    padding-right: 15px;
   }
 
-  .divIcon{
+  input {
+    margin: 10px 0;
+    width: 30vw;
+    height: 39px;
+    padding: 3px;
+    max-width: 300px;
+    border: none;
+    background: var(--branco);
+    color: var(--preto);
+    font-size: 1rem;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .divIcon {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 50px;
     border-right: solid var(--preto) 2px;
+    width: 60px;
   }
 
-  svg{
-    font-size: 1.8rem;
-    height: 45px;
-    color: var(--preto);
-    padding-right: 15px;    
-  }
-
-  .divInput{
+  .divInput {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,23 +81,17 @@ export const LoginMain = styled.main`
     background: var(--branco);
     padding: 0 10px;
     border-radius: 5px;
+    max-height: 50px;
   }
 
-  input {
-    margin: 10px 0;
-    font-size: 1rem;
-    width: 30vw;
-    height: 25px;
-    padding: 10px;
-    max-width: 300px;
-    border: none;    
-    background: var(--branco);
+  svg{
+    font-size: 1.5rem;
+    height: 45px;
     color: var(--preto);
+    padding-right: 15px;    
   }
 
-  input:focus{
-    outline: none;
-  }
+  
 
   button {
     margin-top: 20px;
@@ -124,6 +136,11 @@ export const LoginMain = styled.main`
   .crieSuaConta{
     font-weight: 600;
     color: var(--branco);
+  }
+  
+  .mensagemDeErro {
+    margin: 10px 0 0 0;
+    color: #f44;
   }
 
   @media screen and (max-width: 480px) {

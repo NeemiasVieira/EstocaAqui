@@ -94,8 +94,11 @@ const Cadastro3 = () => {
     // Validação ao completar o CPF
     if (novoCpf.length === 14) {
       setCpfValido(validarCPF(novoCpf));
-    } else {
-      setCpfValido(false); 
+    } else if(novoCpf.length === 11) {
+      setCpfValido(validarCPF(novoCpf));
+    }
+    else{
+      setCpfValido(false);
     }
   };
 
