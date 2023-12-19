@@ -5,7 +5,7 @@ import { faAt, faSquarePhone, faKey } from "@fortawesome/free-solid-svg-icons";
 import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
 
-const validarEmail = (email) => {
+export const validarEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 };

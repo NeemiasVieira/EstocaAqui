@@ -38,13 +38,12 @@ const Cadastro1 = () => {
   };
 
   const onChangeCNPJ = (e) => {
-    const novoCnpj = e.target.value;
-    const cnpjFormatado = formatarCnpj(novoCnpj);
+    const cnpjFormatado = formatarCnpj(e.target.value);
     setCnpj(cnpjFormatado);
 
     // Validação ao completar o CNPJ
-    if (novoCnpj.length === 18) {
-      setCnpjValido(validarCNPJ(novoCnpj));
+    if (e.target.value.length === 18) {
+      setCnpjValido(validarCNPJ(e.target.value));
     }
   };
 
@@ -57,7 +56,7 @@ const Cadastro1 = () => {
     e.preventDefault();
     
     
-    if(grupo.cnpj.length < 18){
+    if(grupo.cnpj.length < 18 || !cnpjValido){
       
       if(grupo.cnpj.length === 0){
         setErro("O CNPJ é obrigatório.")

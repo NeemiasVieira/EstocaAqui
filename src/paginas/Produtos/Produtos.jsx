@@ -7,11 +7,11 @@ const Produtos = () => {
         <ProdutosStyle>
             <p>Produtos</p>
             <button onClick={() => {
-                localStorage.removeItem("tokenValido");
+                localStorage.setItem("tokenValido", "false");
                 localStorage.removeItem("token");
                 localStorage.removeItem("nome");
                 localStorage.removeItem("userID");
-                navigate("/login");
+                navigate("/");
             }}>Deslogar</button>
         </ProdutosStyle>
     )
