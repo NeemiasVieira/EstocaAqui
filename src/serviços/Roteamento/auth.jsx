@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import estoca_api from "../API/api";
 
-const validaToken = async () => {
+export const validaToken = async () => {
 
     const token = {
         headers: {
