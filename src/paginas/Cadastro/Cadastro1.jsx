@@ -5,6 +5,7 @@ import { useCadastroContext } from "../../contextos/CadastroContext";
 import { CadastroEmpresa } from "./CadastroStyles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { buscaCNPJ } from "../../serviços/API/modulos/GrupoService";
 
 const Cadastro1 = () => {
   const { grupo, setCnpj, setRazaoSocial, setNomeFantasia } = useCadastroContext();
@@ -44,8 +45,6 @@ const Cadastro1 = () => {
     // Validação ao completar o CNPJ
     if (novoCnpj.length === 18) {
       setCnpjValido(validarCNPJ(novoCnpj));
-    } else {
-      setCnpjValido(true); // Reinicia a validação se o CNPJ não estiver completo
     }
   };
 
@@ -54,16 +53,43 @@ const Cadastro1 = () => {
     else return false;
   };
 
-  const botaoProximo = (e) => {
+  const botaoProximo = async(e) => {
     e.preventDefault();
+    
+    
+    if(grupo.cnpj.length < 18){
+      
+      if(grupo.cnpj.length === 0){
+        setErro("O CNPJ é obrigatório.")
+        return;
+      }
+      setErro("CNPJ incompleto.")
+      return;
+    }
+    
+    if(grupo.nome_fantasia.length < 2){
+      setErro("O campo nome fantasia precisa estar preenchido.")
+      return;
+    }
+    
+    if(grupo.razao_social.length <= 5){
+      setErro("O campo razão social precisa estar preenchido.");
+      return;
+    }
+    
+    const cnpjJaExiste = await buscaCNPJ(grupo.cnpj);
 
-    if(validarCNPJ(grupo.cnpj) && grupo.nome_fantasia.length > 2 && grupo.razao_social.length > 5){
-      setErro(null);
-      navigate("/cadastro/2");
-      return
+    if(cnpjJaExiste){
+      setErro("O CNPJ já foi cadastrado no sistema.");
+      return;
     }
 
-    setErro("Todos os campos precisam estar preenchidos corretamente");
+    if(validarCNPJ(grupo.cnpj) && grupo.nome_fantasia.length > 2 && grupo.razao_social.length > 5){
+
+      setErro(null);
+      navigate("/cadastro/2");
+  
+    }
 
   }
 
@@ -116,7 +142,7 @@ const Cadastro1 = () => {
         </div>
         {erro && (<p className="mensagemDeErro">{erro}</p>)}
         <div className="BotoesProximoVoltar">
-          <button className="ButtonLink" onClick={(e) => botaoProximo(e)}>Próximo</button>
+          <button className="ButtonLink" onClick={async(e) => await botaoProximo(e)}>Próximo</button>
         </div>
         <div className="sugestaoLogin">
             <p>Já tem cadastro?</p>

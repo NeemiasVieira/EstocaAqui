@@ -19,7 +19,7 @@ const Cadastro7 = () => {
         <p>#pracima {grupo.nome_fantasia}</p>
         <div className="BotoesProximoVoltar">
 
-        <Link to="/">Ir para Login</Link>
+        <Link to="/login">Ir para Login</Link>
         </div>
       </form>
     </CadastroEmpresa>

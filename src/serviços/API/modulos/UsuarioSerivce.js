@@ -18,3 +18,8 @@ export class UsuarioService{
 
    
 }
+
+export const buscaCPF = async(cpf) => {
+    const resposta = await estoca_api.get(`/usuario/verifica-cpf?cpf=${cpf}`);
+    return resposta.data;
+}
