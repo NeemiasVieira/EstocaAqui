@@ -12,14 +12,15 @@ import Cadastro6 from "../../paginas/Cadastro/Cadastro6";
 import Cadastro7 from "../../paginas/Cadastro/Cadastro7";
 import PaginaInicial from "../../paginas/PaginaInicial/PaginaInicial";
 import Produtos from "../../paginas/Produtos/Produtos";
+import ManterAutenticado from "./ManterAutenticado";
 
 export const RouterDOM = () => {
   return (
     <HashRouter>
       <Routes>
         <Route index element={<PaginaInicial />} path="/" />
-        <Route element={<Login/>} path="/login"/>
-        <Route element={<Auth><Produtos/></Auth>} path="/homepage1"/>
+        <Route element={<ManterAutenticado><Login key={2}/></ManterAutenticado>} path="/login"/>
+        <Route element={<Auth><Produtos key={1}/></Auth>} path="/produtos"/>
 
         <Route
           path="/cadastro"
