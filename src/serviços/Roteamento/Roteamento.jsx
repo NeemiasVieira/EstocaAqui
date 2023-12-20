@@ -5,6 +5,7 @@ import Auth from "./auth";
 import Cadastro1 from "../../paginas/Cadastro/Cadastro1";
 import Cadastro2 from "../../paginas/Cadastro/Cadastro2";
 import Cadastro from "../../paginas/Cadastro/Cadastro";
+import Homepage from "../../paginas/Homepage/Homepage";
 import Cadastro3 from "../../paginas/Cadastro/Cadastro3";
 import Cadastro4 from "../../paginas/Cadastro/Cadastro4";
 import Cadastro5 from "../../paginas/Cadastro/Cadastro5";
@@ -13,6 +14,7 @@ import Cadastro7 from "../../paginas/Cadastro/Cadastro7";
 import PaginaInicial from "../../paginas/PaginaInicial/PaginaInicial";
 import Produtos from "../../paginas/Produtos/Produtos";
 import ManterAutenticado from "./ManterAutenticado";
+
 
 export const RouterDOM = () => {
   return (
@@ -35,6 +37,8 @@ export const RouterDOM = () => {
             <Route path="7" element={<Cadastro7/>} />,
           ]}
         />
+
+        <Route path="/homepage" element={<Auth><Homepage/></Auth>} />
       </Routes>
     </HashRouter>
   );

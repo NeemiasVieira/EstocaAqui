@@ -16,3 +16,4 @@ export const Produto = ({produto}) => {
         </ProdutoStyle>
     )
 }
+

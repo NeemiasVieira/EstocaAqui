@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProdutoStyle = styled.div`
+
   display: flex;
   align-items: center;
   flex-flow: row nowrap;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const NavegacaoStyle = styled.nav`
+  margin-bottom: 70px;
+
   * {
     font-family: "Montserrat", sans-serif;
   }
@@ -109,7 +111,9 @@ export const NavegacaoStyle = styled.nav`
         font-size: 1em;
       }
     }
+
    .login {
+
       right: 10%;
     }
   }

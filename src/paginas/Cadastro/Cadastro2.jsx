@@ -14,6 +14,7 @@ const Cadastro2 = () => {
   const servicoUploader = new UploaderService(setResposta, setErro);
 
   const lidarComMudancaArquivo = async (evento) => {
+
     await servicoUploader.enviarImagem(evento.target.files[0]);
   };
 
@@ -21,22 +22,29 @@ const Cadastro2 = () => {
     () => {
       if (resposta) {
         setImamge(String(resposta));
+
         setLogo(resposta);       
+
       }
     },
     resposta,
-    erro,
+    erro
   );
 
   return (
     <CadastroEmpresaAdicionais>
       <h1>Dados Adicionais da Empresa</h1>
       <form>
-      <h2>Escolha da Logo (Opcional)</h2>
+        <h2>Escolha da Logo (Opcional)</h2>
         <div className="inputImagemDiv">
           {!image && (
             <div>
-              <img src={grupo.logo ? grupo.logo : "https://i.imgur.com/IMKOP10.jpg"} alt="Imagem de perfil"></img>
+              <img
+                src={
+                  grupo.logo ? grupo.logo : "https://i.imgur.com/IMKOP10.jpg"
+                }
+                alt="Imagem de perfil"
+              ></img>
             </div>
           )}
 
@@ -45,7 +53,7 @@ const Cadastro2 = () => {
               <img src={image} alt="Imagem de perfil"></img>
             </div>
           )}
-          <input type="file" onChange={lidarComMudancaArquivo} id="arquivo"/>
+          <input type="file" onChange={lidarComMudancaArquivo} id="arquivo" />
 
           <input type="file" class="input-file" id="arquivo" />
 
