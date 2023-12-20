@@ -1,20 +1,14 @@
 import { ProdutosStyle } from "./ProdutosStyle"
 import { useNavigate } from "react-router-dom";
+import { Navegacao } from "../../componentes/Navegacao/Navegacao";
 
 const Produtos = () => {
     const navigate = useNavigate();
     return(
         <ProdutosStyle>
             <p>Produtos</p>
-            <button onClick={() => {
-                localStorage.removeItem("tokenValido");
-                localStorage.removeItem("token");
-                localStorage.removeItem("nome");
-                localStorage.removeItem("userID");
-                navigate("/login");
-            }}>Deslogar</button>
+            <Navegacao loginValido={true}/>
         </ProdutosStyle>
     )
 }
-
 export default Produtos;
