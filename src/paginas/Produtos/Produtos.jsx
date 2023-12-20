@@ -8,7 +8,7 @@ const Produtos = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Navegacao />
+      <Navegacao loginValido={true} />
       <ProdutosStyle>
         <h2>Produtos</h2>
         <ListaProdutos />
@@ -19,3 +19,4 @@ const Produtos = () => {
 };
 
 export default Produtos;
+
