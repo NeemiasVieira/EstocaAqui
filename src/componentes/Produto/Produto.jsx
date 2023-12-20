@@ -1,22 +1,19 @@
-import { ProdutoStyle, ProdutoSection, ProdutoParagraph } from "./ProdutoStyle";
+import { ProdutoStyle } from "./ProdutoStyle"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrash, faPenToSquare, faBars} from "@fortawesome/free-solid-svg-icons"
 
-const Produto = ({ produto, produtoCompleta }) => {
-  return (
-    <ProdutoStyle>
-      {produtoCompleta && (
-        <ProdutoSection>
-          <ProdutoParagraph>Nome: {produto.nome}</ProdutoParagraph>
-          <ProdutoParagraph>Quantidade: {produto.quantidade}</ProdutoParagraph>
-          <ProdutoParagraph>Descrição: {produto.descricao}</ProdutoParagraph>
-          <ProdutoParagraph>Tipo: {produto.tipo}</ProdutoParagraph>
-        </ProdutoSection>
-        )}
-        <ProdutoSection>
-        <ProdutoParagraph>Nome: {produto.nome}</ProdutoParagraph>
-        <ProdutoParagraph>Quantidade: {produto.quantidade}</ProdutoParagraph>
-        </ProdutoSection>
-</ProdutoStyle>
-  );
-};
+export const Produto = ({produto}) => {
+    return(
+        <ProdutoStyle>
+            <span></span>
+            <p className="nome">{produto.nome}</p>
+            <p className="quantidade">{produto.quantidade}</p>
+            <p className="valor-de-compra">R$30,00</p>
+            <p className="valor-de-venda">R$45,00</p>
+            <button className="BotaoEntradas"><FontAwesomeIcon icon={faBars}/> Entradas relacionadas</button>
+            <p className="icones"><FontAwesomeIcon icon={faPenToSquare} className="botaoEdicao"/></p>
+            <p><FontAwesomeIcon icon={faTrash} className="botaoExclusao"/></p>
+        </ProdutoStyle>
+    )
+}
 
-export default Produto;

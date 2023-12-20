@@ -6,8 +6,8 @@ export const FooterStyle = styled.footer`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  color: #fff;
-  background-color: #222;
+  color: var(--branco);
+  background-color: var(--preto-forte);
   height: auto;
   padding: 40px 20px;
 
@@ -70,7 +70,7 @@ export const FooterStyle = styled.footer`
   }
 
   a {
-    color: #fff;
+    color: var(--branco);
     text-decoration: none;
     transition: color 0.3s;
   }

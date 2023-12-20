@@ -6,7 +6,7 @@ const usuarioInicial = {
     email: "",
     telefone: "",
     senha: "",
-    imagem_de_perfil: "",
+    imagem_de_perfil: "https://i.imgur.com/G7TfQqj.jpg",
     cpf: "",
     permissao: "admin",
     id_grupo: 0
@@ -16,7 +16,7 @@ const grupoInicial = {
     razao_social: "",
     nome_fantasia: "",
     cnpj: "",
-    logo: "",
+    logo: "https://i.imgur.com/IMKOP10.jpg",
     banner: ""
 }
 

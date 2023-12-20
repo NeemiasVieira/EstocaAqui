@@ -4,8 +4,8 @@ import { useCadastroContext } from "../../contextos/CadastroContext";
 import { UploaderService } from "../../serviços/API/modulos/UploaderService";
 import { CadastroEmpresaAdicionais } from "./CadastroStyles";
 
-const Cadastro2 = () => {
-  const { usuario, setLogo, setBanner, grupo } = useCadastroContext();
+const Cadastro5 = () => {
+  const { usuario, grupo, setImagemDePerfil } = useCadastroContext();
 
   const [resposta, setResposta] = useState(null);
   const [erro, setErro] = useState(null);
@@ -14,7 +14,6 @@ const Cadastro2 = () => {
   const servicoUploader = new UploaderService(setResposta, setErro);
 
   const lidarComMudancaArquivo = async (evento) => {
-
     await servicoUploader.enviarImagem(evento.target.files[0]);
   };
 
@@ -22,29 +21,22 @@ const Cadastro2 = () => {
     () => {
       if (resposta) {
         setImamge(String(resposta));
-
-        setLogo(resposta);       
-
+        setImagemDePerfil(resposta);       
       }
     },
     resposta,
-    erro
+    erro,
   );
 
   return (
     <CadastroEmpresaAdicionais>
-      <h1>Dados Adicionais da Empresa</h1>
+      <h1>Dados Adicionais do Usuário</h1>
       <form>
-        <h2>Escolha da Logo (Opcional)</h2>
+      <h2>Escolha da Imagem de Perfil (Opcional)</h2>
         <div className="inputImagemDiv">
           {!image && (
             <div>
-              <img
-                src={
-                  grupo.logo ? grupo.logo : "https://i.imgur.com/IMKOP10.jpg"
-                }
-                alt="Imagem de perfil"
-              ></img>
+              <img src={usuario.imagem_de_perfil ? usuario.imagem_de_perfil : "https://i.imgur.com/G7TfQqj.jpg"} alt="Imagem de perfil"></img>
             </div>
           )}
 
@@ -53,7 +45,7 @@ const Cadastro2 = () => {
               <img src={image} alt="Imagem de perfil"></img>
             </div>
           )}
-          <input type="file" onChange={lidarComMudancaArquivo} id="arquivo" />
+          <input type="file" onChange={lidarComMudancaArquivo} id="arquivo"/>
 
           <input type="file" class="input-file" id="arquivo" />
 
@@ -62,12 +54,12 @@ const Cadastro2 = () => {
           </label>
         </div>
         <div className="BotoesProximoVoltar">
-          <Link to="/cadastro/1">Voltar</Link>
-          <Link to="/cadastro/3">Próximo</Link>
+          <Link to="/cadastro/4">Voltar</Link>
+          <Link to="/cadastro/6">Próximo</Link>
         </div>
       </form>
     </CadastroEmpresaAdicionais>
   );
 };
 
-export default Cadastro2;
+export default Cadastro5;
