@@ -59,7 +59,7 @@ const Login = () => {
       localStorage.setItem("token", resposta.data.token);
       localStorage.setItem("nome", resposta.data.usuario.nome);
       localStorage.setItem("userID", resposta.data.usuario.id);
-      navigate("/homepage1");
+      navigate("/produtos");
     }
 
   const onChangeEmail = (e) => {

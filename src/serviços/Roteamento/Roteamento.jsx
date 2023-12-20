@@ -20,7 +20,7 @@ export const RouterDOM = () => {
       <Routes>
         <Route index element={<PaginaInicial />} path="/" />
         <Route element={<ManterAutenticado><Login key={2}/></ManterAutenticado>} path="/login"/>
-        <Route element={<Auth><Produtos key={1}/></Auth>} path="/homepage1"/>
+        <Route element={<Auth><Produtos key={1}/></Auth>} path="/produtos"/>
 
         <Route
           path="/cadastro"
