@@ -6,9 +6,7 @@ import { EntradaService } from "../../serviços/API/modulos/EntradaService";
 import { useEffect, useState } from "react";
 import { SaidaService } from "../../serviços/API/modulos/SaidaService";
 import { HomeBody, HomePageContainer, TituloColuna, EntradaColuna, SaidaColuna } from "./HomepageStyle";
-import Chart from "react-google-charts";
-import { ProdutoService } from "../../serviços/API/modulos/ProdutoService";
-import Produto from "../../componentes/Produto/Produto";
+
 
 
 
