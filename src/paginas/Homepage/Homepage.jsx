@@ -87,7 +87,7 @@ const Homepage = () => {
 
   return (
     <>
-      <Navegacao />
+      <Navegacao loginValido={true} />
       <HomeBody>
         <h1>Bem vindo, {nomeUsuario}</h1>
         <HomePageContainer>
