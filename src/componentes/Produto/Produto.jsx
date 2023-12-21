@@ -31,8 +31,8 @@ export const Produto = ({ produto, setAtualizaPag, atualizaPag}) => {
         <td className="barra" style={{ backgroundColor: produto.cor || '#000' }}></td>
         <td className="nome">{produto.nome}</td>
         <td className="quantidade">{produto.quantidade}</td>
-        <td className="valor-de-compra">R$30,00</td>
-        <td className="valor-de-venda">R$45,00</td>
+        <td className="valor-de-compra">R${produto.valor_de_compra.toFixed(2)}</td>
+        <td className="valor-de-venda">R${produto.valor_de_venda.toFixed(2)}</td>
         <td className="acoes">
           <div className="acoes-container">
             <button className="BotaoEntradas">
