@@ -1,17 +1,21 @@
 import { ProdutosStyle } from "./ProdutosStyle";
-import { useNavigate } from "react-router-dom";
-import { ListaProdutos } from "../../componentes/ListaProdutos/ListaProdutos";
+import { ListaProdutos } from "../../componentes/Produtos/ListaProdutos/ListaProdutos";
 import { Navegacao } from "../../componentes/Navegacao/Navegacao";
 import { Footer } from "../../componentes/Footer/Footer";
+import { ModalCriarProduto } from "../../componentes/Produtos/ModalCriarProduto/ModalCriarProduto";
+import { AtualizarPaginaProvider } from "../../contextos/AtualizarPaginaProvider";
 
 const Produtos = () => {
-  const navigate = useNavigate();
+
   return (
     <>
       <Navegacao loginValido={true} />
       <ProdutosStyle>
         <h2>Produtos</h2>
-        <ListaProdutos />
+        <AtualizarPaginaProvider>
+          <ModalCriarProduto/>
+          <ListaProdutos/>
+        </AtualizarPaginaProvider>
       </ProdutosStyle>
       <Footer />
     </>
@@ -19,4 +23,3 @@ const Produtos = () => {
 };
 
 export default Produtos;
-
