@@ -7,37 +7,8 @@ align-items: center;
 flex-flow: column wrap;
 
 h2{
-    margin: 5px;
+    margin: 5px 5px 25px 5px;
 }
-
-.divInput {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 5px;
-    width: 90%;
-
-    input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-  }
 
   .divValores{
     display: flex;
@@ -45,7 +16,7 @@ textarea {
     align-items: center;
     flex-flow: row nowrap;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     margin: 10px 0;
 
     input{
@@ -73,33 +44,12 @@ textarea {
     transform: scale(1.1);
   }
 
-  .Error{
-    margin: 0 0 10px 0;
+  .erro{
+    margin: 15px 0;
     color: #F33;
     font-weight: 700;
   }
 
-  .cor{
-    border-radius: 15px;
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-
-  label{
-    text-align: center;
-  }
-
-  .divInputCores{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
 
 `
 
